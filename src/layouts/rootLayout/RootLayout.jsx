@@ -8,7 +8,9 @@ const RootLayout = () => {
             <Navbar></Navbar>
 
             {/* dynamic content */}
-            <Outlet></Outlet>
+            <main className="bg-[#F8FAFC]">
+                <Outlet></Outlet>
+            </main>
 
             <Footer></Footer>
         </div>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "David Kim",
+    "picture": "https://i.pravatar.cc/300?img=12",
+    "email": "david.kim@example.com",
+    "days_since_contact": 62,
+    "status": "almost due",
+    "tags": ["work"],
+    "bio": "Worked together on several startup projects and enjoys coffee chats.",
+    "goal": 30,
+    "next_due_date": "2026-06-15"
+  },
+  {
+    "id": 2,
+    "name": "Emma Wilson",
+    "picture": "https://i.pravatar.cc/300?img=32",
+    "email": "emma.wilson@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["family"],
+    "bio": "Cousin from Toronto who loves photography and traveling.",
+    "goal": 14,
+    "next_due_date": "2026-05-28"
+  },
+  {
+    "id": 3,
+    "name": "Lisa Nakamura",
+    "picture": "https://i.pravatar.cc/300?img=47",
+    "email": "lisa.nakamura@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["work"],
+    "bio": "UX designer friend who enjoys discussing creative ideas.",
+    "goal": 21,
+    "next_due_date": "2026-05-25"
+  },
+  {
+    "id": 4,
+    "name": "James Wright",
+    "picture": "https://i.pravatar.cc/300?img=15",
+    "email": "james.wright@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["hobby", "travel"],
+    "bio": "Met during a backpacking trip through Southeast Asia.",
+    "goal": 10,
+    "next_due_date": "2026-05-24"
+  },
+  {
+    "id": 5,
+    "name": "Sophia Carter",
+    "picture": "https://i.pravatar.cc/300?img=20",
+    "email": "sophia.carter@example.com",
+    "days_since_contact": 40,
+    "status": "overdue",
+    "tags": ["work"],
+    "bio": "Former colleague who now runs her own design agency.",
+    "goal": 20,
+    "next_due_date": "2026-05-22"
+  },
+  {
+    "id": 6,
+    "name": "Michael Lee",
+    "picture": "https://i.pravatar.cc/300?img=36",
+    "email": "michael.lee@example.com",
+    "days_since_contact": 10,
+    "status": "on-track",
+    "tags": ["family"],
+    "bio": "Younger brother currently studying computer science.",
+    "goal": 15,
+    "next_due_date": "2026-06-12"
+  },
+  {
+    "id": 7,
+    "name": "Noah Martinez",
+    "picture": "https://i.pravatar.cc/300?img=56",
+    "email": "noah.martinez@example.com",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["work"],
+    "bio": "Frontend developer friend from a hackathon event.",
+    "goal": 14,
+    "next_due_date": "2026-06-14"
+  },
+  {
+    "id": 8,
+    "name": "Olivia Brown",
+    "picture": "https://i.pravatar.cc/300?img=60",
+    "email": "olivia.brown@example.com",
+    "days_since_contact": 50,
+    "status": "almost due",
+    "tags": ["hobby", "travel"],
+    "bio": "Travel blogger friend who enjoys mountain trekking.",
+    "goal": 60,
+    "next_due_date": "2026-06-01"
+  },
+  {
+    "id": 9,
+    "name": "Charlotte Green",
+    "picture": "https://i.pravatar.cc/300?img=25",
+    "email": "charlotte.green@example.com",
+    "days_since_contact": 55,
+    "status": "almost due",
+    "tags": ["work"],
+    "bio": "Marketing expert who loves attending networking events.",
+    "goal": 60,
+    "next_due_date": "2026-06-03"
+  },
+  {
+    "id": 10,
+    "name": "Ava Thompson",
+    "picture": "https://i.pravatar.cc/300?img=41",
+    "email": "ava.thompson@example.com",
+    "days_since_contact": 75,
+    "status": "overdue",
+    "tags": ["family"],
+    "bio": "Family friend known for hosting amazing dinner parties.",
+    "goal": 30,
+    "next_due_date": "2026-05-18"
+  }
+]
