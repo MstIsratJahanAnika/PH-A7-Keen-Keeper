@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+/* google fonts */
+
+body{
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+}
