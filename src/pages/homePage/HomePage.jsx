@@ -1,35 +1,13 @@
 import { GoPlus } from "react-icons/go";
 import StateCard from "./StateCard";
 import { useEffect, useState } from "react";
+import AllFriends from "./allFriendsSection/AllFriends";
 
-// half-static part 
-const stateData = [
-    {
-        id: 1,
-        value: 10,
-        title: "Total Friends",
-    },
-    {
-        id: 2,
-        value: 3,
-        title: "On Track",
-    },
-    {
-        id: 3,
-        value: 6,
-        title: "Need Attention",
-    },
-    {
-        id: 4,
-        value: 12,
-        title: "Interactions This Month",
-    },
-];
 
 const HomePage = () => {
 
     // friends data state er moddhe set korar jonno
-    const [friendsData, setFriendsData] = useState([]);
+    const [allFriendsData, setAllFriendsData] = useState([]);
 
     // for loading fallback
     const [isLoading, setIsLoading] = useState(true);
@@ -37,18 +15,47 @@ const HomePage = () => {
     // data fetching 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch ('/friends.json');
+            const response = await fetch('/friends.json');
             const data = await response.json();
             console.log(data);
 
-            setFriendsData(data); //state er moddhe friends data 
+            setAllFriendsData(data); //state er moddhe friends data 
             setIsLoading(false); //loading false
 
         };
         fetchData();
     }, []);
 
-    console.log(friendsData, 'friends data from home page');
+    const onTrackFriends = allFriendsData.filter(
+        friend => friend.status === "on-track"
+    );
+
+    // half-static part 
+    const stateData = [
+        {
+            id: 1,
+            value: allFriendsData.length,
+            title: "Total Friends",
+        },
+        {
+            id: 2,
+            value: onTrackFriends.length,
+            title: "On Track",
+        },
+        {
+            id: 3,
+            value: 6,
+            title: "Need Attention",
+        },
+        {
+            id: 4,
+            value: 12,
+            title: "Interactions This Month",
+        },
+    ];
+
+
+    console.log(allFriendsData, 'friends data from home page');
     console.log(isLoading, 'is loading from home page');
 
 
@@ -61,7 +68,7 @@ const HomePage = () => {
                     relationships that matter most.
                 </p>
 
-                <button className="bg-[#244D3F] p-3 rounded-sm flex justify-center items-center text-white mt-4"><GoPlus />Add a Friend</button>
+                <button className="bg-[#244D3F] p-3 rounded-sm flex justify-center items-center text-white mt-4 cursor-pointer"><GoPlus />Add a Friend</button>
             </div>
 
             <div className="grid grid-cols-4 gap-6 mb-10">
@@ -77,7 +84,7 @@ const HomePage = () => {
 
             {/* dynamic content part */}
             <div>
-                
+                <AllFriends allFriendsData={allFriendsData} setAllFriendsData={setAllFriendsData} isLoading={isLoading} setIsLoading={setIsLoading}></AllFriends>
             </div>
         </div>
     );
