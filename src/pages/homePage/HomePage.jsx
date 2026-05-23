@@ -1,5 +1,6 @@
 import { GoPlus } from "react-icons/go";
 import StateCard from "./StateCard";
+import { useEffect, useState } from "react";
 
 // half-static part 
 const stateData = [
@@ -26,6 +27,31 @@ const stateData = [
 ];
 
 const HomePage = () => {
+
+    // friends data state er moddhe set korar jonno
+    const [friendsData, setFriendsData] = useState([]);
+
+    // for loading fallback
+    const [isLoading, setIsLoading] = useState(true);
+
+    // data fetching 
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch ('/friends.json');
+            const data = await response.json();
+            console.log(data);
+
+            setFriendsData(data); //state er moddhe friends data 
+            setIsLoading(false); //loading false
+
+        };
+        fetchData();
+    }, []);
+
+    console.log(friendsData, 'friends data from home page');
+    console.log(isLoading, 'is loading from home page');
+
+
     return (
         <div className="container mx-auto mt-20 space-y-10 w-9/12">
             <div className="text-center space-y-4 flex flex-col justify-center items-center">
@@ -38,15 +64,20 @@ const HomePage = () => {
                 <button className="bg-[#244D3F] p-3 rounded-sm flex justify-center items-center text-white mt-4"><GoPlus />Add a Friend</button>
             </div>
 
-            <div className="grid grid-cols-4 gap-6">
-                {stateData.map((stat) => (
-                        <StateCard key={stat.id} value={stat.value} title={stat.title}></StateCard>
+            <div className="grid grid-cols-4 gap-6 mb-10">
+
+                {stateData.map((state) => (
+                    <StateCard key={state.id} value={state.value} title={state.title}></StateCard>
                 ))}
+            </div>
+
+            <div className="text-[#babbbd]">
+                <hr />
             </div>
 
             {/* dynamic content part */}
             <div>
-
+                
             </div>
         </div>
     );
