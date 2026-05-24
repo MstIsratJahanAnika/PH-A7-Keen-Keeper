@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 const EachFriendCard = ({ friend }) => {
 
@@ -5,7 +6,7 @@ const EachFriendCard = ({ friend }) => {
     const { id, name, picture, status, tags, days_since_contact } = friend;
 
     return (
-        <div key={id} className="bg-white p-4 rounded-lg shadow text-center">
+        <Link key={id} to={`/friends/${id}`} className="bg-white p-4 rounded-lg shadow text-center">
             <img
                 src={picture}
                 alt={name}
@@ -28,7 +29,7 @@ const EachFriendCard = ({ friend }) => {
                 ${status === 'overdue' ? 'bg-[#EF4444]' : status === 'almost due' ? 'bg-[#EFAD44]' : status === 'on-track' ? 'bg-[#244D3F]' : ''}`}>
                     {status}
             </p>
-        </div>
+        </Link>
     );
 };
 

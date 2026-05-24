@@ -2,29 +2,13 @@ import { GoPlus } from "react-icons/go";
 import StateCard from "./StateCard";
 import { useEffect, useState } from "react";
 import AllFriends from "./allFriendsSection/AllFriends";
+import useFriendsData from "./customHookDataFetching/useFriendsData";
 
 
 const HomePage = () => {
 
-    // friends data state er moddhe set korar jonno
-    const [allFriendsData, setAllFriendsData] = useState([]);
-
-    // for loading fallback
-    const [isLoading, setIsLoading] = useState(true);
-
-    // data fetching 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch('/friends.json');
-            const data = await response.json();
-            console.log(data);
-
-            setAllFriendsData(data); //state er moddhe friends data 
-            setIsLoading(false); //loading false
-
-        };
-        fetchData();
-    }, []);
+    // custom hook use kore data fetching and state management
+    const { allFriendsData, setAllFriendsData, isLoading, setIsLoading } = useFriendsData();
 
     const onTrackFriends = allFriendsData.filter(
         friend => friend.status === "on-track"
