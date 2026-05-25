@@ -7,9 +7,19 @@ const CommunicationTypeContextProvider = ( { children } ) => {
     // call state management
     const [callingInfos, setCallingInfos] = useState([]);
 
+    // text state management
+    const [textingInfos, setTextingInfos] = useState([]);
+
+    // video call state management
+    const [videoCallInfos, setVideoCallInfos] = useState([]);
+
     const data = {
        callingInfos,
        setCallingInfos,
+       textingInfos,
+       setTextingInfos,
+       videoCallInfos,
+       setVideoCallInfos
     }
 
     return (

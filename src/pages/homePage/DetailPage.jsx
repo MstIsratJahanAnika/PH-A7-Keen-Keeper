@@ -8,6 +8,7 @@ import { PiChatTextBold } from "react-icons/pi";
 import { BiPhoneCall } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { CommunicationTypeContext } from "../../context/CommunicationTypeContext";
+import { toast } from "react-toastify";
 
 const DetailPage = () => {
     const { id } = useParams();
@@ -17,8 +18,19 @@ const DetailPage = () => {
     console.log(allFriendsData, isLoading);
 
     // context theke destructuring
+
+    // calling
     const { callingInfos, setCallingInfos } = useContext(CommunicationTypeContext);
     console.log(callingInfos, setCallingInfos, 'context data from DetailPage');
+
+    // texting
+    const { textingInfos, setTextingInfos } = useContext(CommunicationTypeContext);
+    console.log(textingInfos, setTextingInfos, 'context data from DetailPage');
+
+    // video call
+    const { videoCallInfos, setVideoCallInfos } = useContext(CommunicationTypeContext);
+    console.log(videoCallInfos, setVideoCallInfos, 'context data from DetailPage');
+
 
     // jotokkhon data load hobe, totokkhon loading spinner dekhabe
     if (isLoading) {
@@ -35,16 +47,33 @@ const DetailPage = () => {
         return <ErrorPage></ErrorPage>
     }
 
+    // function calling friend
     const handleCallingFriend = () => {
-        const callData = [...callingInfos, expectedFriend];
+        setCallingInfos([...callingInfos, expectedFriend]);
 
-        // calling data update kora context er state e
-        setCallingInfos(callData);
+        // toaster
+        toast.success(`Calling ${expectedFriend.name}!`);
     };
+    // function texting friend
+    const handleTextingFriend = () => {
+        setTextingInfos([...textingInfos, expectedFriend]);
+
+        // toaster
+        toast.success(`Texting ${expectedFriend.name}!`);
+    };
+    // function video calling friend
+    const handleVideoCallFriend = () => {
+        setVideoCallInfos([...videoCallInfos, expectedFriend]);
+
+        // toaster
+        toast.success(`Video calling ${expectedFriend.name}!`);
+    };
+
+
 
     const {name, picture, status, tags, days_since_contact, bio, next_due_date, goal, email } = expectedFriend;
     return (
-        <div className="w-9/12 flex gap-6 mx-auto my-10 flex-col md:flex-row">
+        <div className="w-10/12 flex gap-6 mx-auto my-10 flex-col md:flex-row">
             <div className="space-y-4">
                 <div className="flex flex-col text-center shadow bg-white py-5 px-5 rounded-lg">
                     <img src={picture} alt={name} className="w-20 h-20 rounded-full mx-auto" />
@@ -101,7 +130,7 @@ const DetailPage = () => {
                 <div className="bg-white shadow rounded-lg p-6 space-y-4">
                     <div className="flex justify-between items-center">
                         <h4 className="text-[18px] text-[#244D3F]">Relationship Goal</h4>
-                        <button className="bg-[#F8FAFC] text-[#244D3F] py-2 px-4 rounded-lg hover:bg-[#dde0e5]">
+                        <button className="bg-[#F8FAFC] text-[#244D3F] py-2 px-4 rounded-lg hover:bg-[#dde0e5] cursor-pointer">
                             Edit
                         </button>
                     </div>
@@ -112,8 +141,8 @@ const DetailPage = () => {
                     <h3 className="text-[#244D3F] text-xl">Quick Check-In</h3>
                     <div className="grid grid-cols-3 gap-4">
                         <p onClick={handleCallingFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><BiPhoneCall className="text-xl" />Call</p>                        
-                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><PiChatTextBold />Text</p>
-                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><RiVideoOnLine />Video</p>
+                        <p onClick={handleTextingFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><PiChatTextBold />Text</p>
+                        <p onClick={handleVideoCallFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><RiVideoOnLine />Video</p>
                     </div>
                 </div>
             </div>
