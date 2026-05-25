@@ -14,6 +14,10 @@ const HomePage = () => {
         friend => friend.status === "on-track"
     );
 
+    const needAttentionFriends = allFriendsData.filter(
+        friend => friend.status === "overdue"
+    );
+
     // half-static part 
     const stateData = [
         {
@@ -28,12 +32,12 @@ const HomePage = () => {
         },
         {
             id: 3,
-            value: 6,
+            value: needAttentionFriends.length,
             title: "Need Attention",
         },
         {
             id: 4,
-            value: 12,
+            value: allFriendsData.length,
             title: "Interactions This Month",
         },
     ];

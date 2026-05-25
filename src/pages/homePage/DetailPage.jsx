@@ -6,6 +6,8 @@ import { RiDeleteBinLine, RiNotificationSnoozeLine, RiVideoOnLine } from "react-
 import { FiArchive } from "react-icons/fi";
 import { PiChatTextBold } from "react-icons/pi";
 import { BiPhoneCall } from "react-icons/bi";
+import { useContext, useState } from "react";
+import { CommunicationTypeContext } from "../../context/CommunicationTypeContext";
 
 const DetailPage = () => {
     const { id } = useParams();
@@ -13,6 +15,10 @@ const DetailPage = () => {
 
     const { allFriendsData, isLoading } = useFriendsData();
     console.log(allFriendsData, isLoading);
+
+    // context theke destructuring
+    const { callingInfos, setCallingInfos } = useContext(CommunicationTypeContext);
+    console.log(callingInfos, setCallingInfos, 'context data from DetailPage');
 
     // jotokkhon data load hobe, totokkhon loading spinner dekhabe
     if (isLoading) {
@@ -29,7 +35,14 @@ const DetailPage = () => {
         return <ErrorPage></ErrorPage>
     }
 
-    const { id: friendId, name, picture, status, tags, days_since_contact, bio, next_due_date, goal, email, } = expectedFriend;
+    const handleCallingFriend = () => {
+        const callData = [...callingInfos, expectedFriend];
+
+        // calling data update kora context er state e
+        setCallingInfos(callData);
+    };
+
+    const {name, picture, status, tags, days_since_contact, bio, next_due_date, goal, email } = expectedFriend;
     return (
         <div className="w-9/12 flex gap-6 mx-auto my-10 flex-col md:flex-row">
             <div className="space-y-4">
@@ -66,7 +79,7 @@ const DetailPage = () => {
                     </span>
                 </div>
             </div>
-            
+
             <div className="flex-1 space-y-6">
                 <div className="grid grid-cols-3 gap-6 shadow rounded-lg p-6">
                     <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-[30px]">
@@ -88,7 +101,7 @@ const DetailPage = () => {
                 <div className="bg-white shadow rounded-lg p-6 space-y-4">
                     <div className="flex justify-between items-center">
                         <h4 className="text-[18px] text-[#244D3F]">Relationship Goal</h4>
-                        <button className="bg-[#F8FAFC] text-[#244D3F] py-2 px-4 rounded-lg hover:bg-[#c6d4cd]">
+                        <button className="bg-[#F8FAFC] text-[#244D3F] py-2 px-4 rounded-lg hover:bg-[#dde0e5]">
                             Edit
                         </button>
                     </div>
@@ -98,9 +111,9 @@ const DetailPage = () => {
                 <div className="bg-white shadow rounded-lg p-6 space-y-4">
                     <h3 className="text-[#244D3F] text-xl">Quick Check-In</h3>
                     <div className="grid grid-cols-3 gap-4">
-                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2"><BiPhoneCall className="text-xl" />Call</p>                        
-                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2"><PiChatTextBold />Text</p>
-                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2"><RiVideoOnLine />Video</p>
+                        <p onClick={handleCallingFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><BiPhoneCall className="text-xl" />Call</p>                        
+                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><PiChatTextBold />Text</p>
+                        <p className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><RiVideoOnLine />Video</p>
                     </div>
                 </div>
             </div>
