@@ -1,16 +1,47 @@
-# React + Vite
+# Friendship Relationship Manager (Keen Keeper)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+**Keen Keeper** is a modern **React-based** web application designed to help users maintain and manage their personal relationships with friends and family members. Users can track communication history through calls, texts, and video calls while monitoring interaction analytics and relationship goals.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js
+- React Router
+- Tailwind CSS
+- DaisyUI
+- Context API
+- Recharts
+- React Icons
+- React Toastify
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+
+### 1. Dynamic Timeline Management
+- Track all communication activities in a unified timeline.
+- Latest interactions automatically appear first.
+- Timeline can be filtered by communication type.
+
+### 2. Communication Analytics Dashboard
+- Visualize communication statistics using interactive pie charts.
+- Track calls, texts, and video call activities separately.
+
+### 3. Relationship Tracking System
+- Manage friendship goals and communication frequency.
+- View friend details, including status, next due date, and relationship progress.
+
+
+
+---
+
+## Learnings
+
+- React component architecture
+- Context API and state management
+- Dynamic rendering
+- Data filtering and sorting
+- Responsive UI design
