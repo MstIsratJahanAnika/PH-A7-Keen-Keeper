@@ -5,7 +5,7 @@ const StateCard = ({ value, title }) => {
         {value}
       </h3>
 
-      <p className="text-[#64748B] text-[18px]">
+      <p className="text-[#64748B] text-[14px] md:text-[18px]">
         {title}
       </p>
     </div>

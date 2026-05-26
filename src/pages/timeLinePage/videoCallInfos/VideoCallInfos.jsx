@@ -25,8 +25,8 @@ const VideoCallInfos = ({videoCallInfo}) => {
             </span>
 
             <div>
-                <p className="text-[18px] text-[#64748B]"><span className="font-semibold text-lg text-[#244D3F]">Video Call With</span> {name}</p>
-                <p className="text-[16px] text-[#64748B]">{currentDate}</p>
+                <p className="text-[16px] md:text-[18px] text-[#64748B]"><span className="font-semibold text-lg text-[#244D3F]">Video Call With</span> {name}</p>
+                <p className="text-[16px] md:text-[16px] text-[#64748B]">{currentDate}</p>
             </div>
         </div>
     );

@@ -6,8 +6,8 @@ const Footer = () => {
     return (
         <div className="mt-[80px] bg-[#244D3F] text-white pt-[80px] pb-[30px]">
             <div className="text-center">
-                <div className="space-y-6 mb-6">
-                    <h2 className="text-6xl font-semibold"><span className="font-bold">Keen</span>Keeper</h2>
+                <div className="space-y-6 mb-6 px-6 md:px-0">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold"><span className="font-bold">Keen</span>Keeper</h2>
                     <p>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                 </div>
                 <div className="space-y-5">
@@ -32,10 +32,10 @@ const Footer = () => {
             <div className="px-5 mt-[40px]">
                 <hr className="border-[#FAFAFA]/20" />
             </div>
-            <div className="text-[#FAFAFA]/50 flex justify-between items-center mt-7.5 px-5">
-                <p className="flex items-center gap-1"><MdCopyright />2026 KeenKeeper. All rights reserved.</p>
+            <div className="text-[#FAFAFA]/50 flex justify-between items-center mt-7.5 px-7 md:px-5">
+                <p className="flex text-[14px] md:text-[16px] items-center gap-1"><MdCopyright />2026 KeenKeeper. All rights reserved.</p>
 
-                <ul className="flex justify-between items-center gap-7">
+                <ul className="flex justify-between text-[14px] md:text-[16px] items-center gap-7">
                     <li>Privacy Policy</li>
                     <li>Terms of Service</li>
                     <li>Cookies</li>

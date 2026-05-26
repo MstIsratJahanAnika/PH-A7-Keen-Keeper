@@ -120,7 +120,7 @@ const DetailPage = () => {
                             ))
                         }
                     </p>
-                    <p className="text-[#64748B] my-3">{bio}</p>
+                    <p className="text-[#64748B] text-[14px] md:text-[16px] my-3">{bio}</p>
                     <p className="text-[#64748B] text-[14px]"><span className="font-semibold">Email:</span> {email}</p>
                 </div>
 
@@ -138,18 +138,18 @@ const DetailPage = () => {
             </div>
 
             <div className="flex-1 space-y-6">
-                <div className="grid grid-cols-3 gap-6 shadow rounded-lg p-6">
-                    <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-[30px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 shadow rounded-lg p-6">
+                    <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-2xl md:text-[30px]">
                         {days_since_contact} 
                         <span className="text-[#64748B] text-[18px]">Days Since Contact</span>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-[30px]">
+                    <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-2xl md:text-[30px]">
                         {goal}
                         <span className="text-[#64748B] text-[18px]">Goal (Days)</span>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-[30px]">
+                    <div className="flex flex-col items-center justify-center gap-2 border bg-white border-[#E2E8F0] rounded-lg py-4 text-[#244D3F] font-semibold text-2xl md:text-[30px]">
                         {next_due_date}
                         <span className="text-[#64748B] text-[18px]">Next Due Date</span>
                     </div>
@@ -157,17 +157,17 @@ const DetailPage = () => {
 
                 <div className="bg-white shadow rounded-lg p-6 space-y-4">
                     <div className="flex justify-between items-center">
-                        <h4 className="text-[18px] text-[#244D3F]">Relationship Goal</h4>
+                        <h4 className="text-[16px] md:text-[18px] text-[#244D3F]">Relationship Goal</h4>
                         <button className="bg-[#F8FAFC] text-[#244D3F] py-2 px-4 rounded-lg hover:bg-[#dde0e5] cursor-pointer">
                             Edit
                         </button>
                     </div>
-                    <p className="text-[#64748B]">Connect every <span className="font-semibold text-[#1F2937]">{goal} days</span></p>
+                    <p className="text-[#64748B]">Connect every <span className="text-[14px] md:text-[18px] font-semibold text-[#1F2937]">{goal} days</span></p>
                 </div>
 
                 <div className="bg-white shadow rounded-lg p-6 space-y-4">
                     <h3 className="text-[#244D3F] text-xl">Quick Check-In</h3>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <p onClick={handleCallingFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><BiPhoneCall className="text-xl" />Call</p>                        
                         <p onClick={handleTextingFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><PiChatTextBold />Text</p>
                         <p onClick={handleVideoCallFriend} className="py-4 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-[#dde0e5] cursor-pointer"><RiVideoOnLine />Video</p>

@@ -39,9 +39,9 @@ const StatsPage = () => {
 
     return (
         <div>
-            <h2 className="text-5xl font-bold text-[#1F2937]">Friendship Analytics</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1F2937]">Friendship Analytics</h2>
 
-            <div className="my-20 rounded-md border border-slate-300 py-10 container mx-auto px-20 bg-white">
+            <div className="my-20 rounded-md border border-slate-300 py-10 container mx-auto px-10 md:px-20 bg-white">
                 <h3 className="text-[#244D3F] font-semibold my-6">By Interaction Type</h3>
 
                 {

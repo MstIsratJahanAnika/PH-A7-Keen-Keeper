@@ -1,6 +1,5 @@
 import { GoPlus } from "react-icons/go";
 import StateCard from "./StateCard";
-import { useEffect, useState } from "react";
 import AllFriends from "./allFriendsSection/AllFriends";
 import useFriendsData from "./customHookDataFetching/useFriendsData";
 
@@ -50,7 +49,7 @@ const HomePage = () => {
     return (
         <div className="container mx-auto mt-20 space-y-10 w-9/12">
             <div className="text-center space-y-4 flex flex-col justify-center items-center">
-                <h2 className="text-[#1F2937] font-bold text-5xl">Friends to keep close in your life</h2>
+                <h2 className="text-[#1F2937] font-bold text-3xl md:text-4xl lg:text-5xl">Friends to keep close in your life</h2>
 
                 <p className="text-[#64748B]">Your personal shelf of meaningful connections. Browse, tend, and nurture the <br />
                     relationships that matter most.
@@ -59,7 +58,7 @@ const HomePage = () => {
                 <button className="bg-[#244D3F] p-3 rounded-sm flex justify-center items-center text-white mt-4 cursor-pointer"><GoPlus />Add a Friend</button>
             </div>
 
-            <div className="grid grid-cols-4 gap-6 mb-10">
+            <div className="grid grid-cols-2  md:grid-cols-4 gap-6 mb-10">
 
                 {stateData.map((state) => (
                     <StateCard key={state.id} value={state.value} title={state.title}></StateCard>

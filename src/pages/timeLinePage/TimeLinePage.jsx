@@ -49,17 +49,17 @@ const TimeLinePage = () => {
 
     return (
         <div className="container mx-auto min-h-[60vh] w-9/12 mt-20 mb-10">
-            <h2 className="font-bold text-5xl mb-6">TimeLine</h2>
+            <h2 className="font-bold text-4xl md:text-5xl mb-6">TimeLine</h2>
 
             {/* dropdown */}
             <div className="mb-6">
                 {/* change popover-1 and --anchor-1 names. Use unique names for each dropdown */}
                 {/* For TSX uncomment the commented types below */}
-                <button className="text-[#64748B] flex gap-15 px-4 py-2 items-center border border-2 border-[#c1c5cc] rounded-md" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } /* as React.CSSProperties */}>
+                <button className="text-[#64748B] text-[14px] md:text-[16px] flex gap-15 px-4 py-2 items-center border border-2 border-[#c1c5cc] rounded-md" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" } /* as React.CSSProperties */}>
                     Filter TimeLine<IoIosArrowDown />
                 </button>
 
-                <ul className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                <ul className="dropdown menu w-52 text-[14px] md:text-[16px] rounded-box bg-base-100 shadow-sm"
                     popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" } /* as React.CSSProperties */}>
                     <li onClick={() => setFilterType('time')} className="text-[#64748B] cursor-pointer"><a>Sort By Time</a></li>
                     <li onClick={() => setFilterType('call')} className="text-[#64748B] cursor-pointer"><a>Sort By Calling</a></li>
@@ -70,7 +70,7 @@ const TimeLinePage = () => {
 
 
             {
-                noData ? (<p className="text-center text-5xl text-[#244D3F] mt-40">No Data Found</p>) : (
+                noData ? (<p className="text-center text-4xl md:text-5xl text-[#244D3F] mt-40">No Data Found</p>) : (
 
                     sortedData.map((calling) => {
 
