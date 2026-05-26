@@ -6,9 +6,10 @@ import { RiDeleteBinLine, RiNotificationSnoozeLine, RiVideoOnLine } from "react-
 import { FiArchive } from "react-icons/fi";
 import { PiChatTextBold } from "react-icons/pi";
 import { BiPhoneCall } from "react-icons/bi";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CommunicationTypeContext } from "../../context/CommunicationTypeContext";
 import { toast } from "react-toastify";
+
 
 const DetailPage = () => {
     const { id } = useParams();
@@ -58,7 +59,7 @@ const DetailPage = () => {
         }
 
         //na hole execute koro
-        setCallingInfos([...callingInfos, expectedFriend]);
+        setCallingInfos([...callingInfos, {...expectedFriend,createdAt: new Date().getTime(),}]);
 
         // toaster
         toast.success(`Calling ${expectedFriend.name}!`);
@@ -74,7 +75,7 @@ const DetailPage = () => {
         }
 
         //na hole execute koro
-        setTextingInfos([...textingInfos, expectedFriend]);
+        setTextingInfos([...textingInfos, {...expectedFriend, createdAt: new Date().getTime(),}]);
 
         // toaster
         toast.success(`Texting ${expectedFriend.name}!`);
@@ -90,7 +91,7 @@ const DetailPage = () => {
         }
 
         //na hole execute koro
-        setVideoCallInfos([...videoCallInfos, expectedFriend]);
+        setVideoCallInfos([...videoCallInfos, {...expectedFriend, createdAt: new Date().getTime(),}]);
 
         // toaster
         toast.success(`Video calling ${expectedFriend.name}!`);

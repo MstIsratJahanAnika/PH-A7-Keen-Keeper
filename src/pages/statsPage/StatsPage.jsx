@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Legend, Pie, PieChart, Tooltip } from "recharts";
 import { CommunicationTypeContext } from "../../context/CommunicationTypeContext";
 import { HashLoader } from "react-spinners";
@@ -46,7 +46,7 @@ const StatsPage = () => {
 
                 {
                     totalCommunication === 0? (
-                        <h2 className="text-center text-3xl font-semibold text-gray-500 min-h-[60vh] pt-30">No Communication Occurred</h2>
+                        <p className="text-center text-5xl text-[#244D3F] mt-40">No Data Found</p>
                     ): (<PieChart style={{ width: '100%', maxWidth: '500px', margin: 'auto', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                     <Pie
                         data={data}

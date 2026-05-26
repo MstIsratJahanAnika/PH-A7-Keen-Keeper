@@ -3,7 +3,7 @@ import { CommunicationTypeContext } from "../../../context/CommunicationTypeCont
 
 import VideoCallImg from '../../../assets/video.png';
 
-const VideoCallInfos = () => {
+const VideoCallInfos = ({videoCallInfo}) => {
 
     const { videoCallInfos, setVideoCallInfos } = useContext(CommunicationTypeContext);
     console.log(videoCallInfos, setVideoCallInfos, 'context data from timeLinePage');
@@ -15,27 +15,21 @@ const VideoCallInfos = () => {
         year: "numeric",
     });
 
+
+    const { id, name } = videoCallInfo;
+
     return (
-        <div>
-            {
-                videoCallInfos.map((videoCallInfo) => {
-                    const { id, name, picture, email, days_since_contact, status, tags, bio, goal, next_due_date } = videoCallInfo;
+        <div key={id} className="flex items-center gap-4 ml-4 shadow-sm p-4 rounded-lg bg-white mb-6">
+            <span>
+                <img src={VideoCallImg} alt={name} />
+            </span>
 
-                    return (
-                        <div key={id} className="flex items-center gap-4 ml-4 shadow-sm p-4 rounded-lg bg-white mb-6">
-                            <span>
-                                <img src={VideoCallImg} alt={name} />
-                            </span>
-
-                            <div>
-                                <p className="text-[18px] text-[#64748B]"><span className="font-semibold text-lg text-[#244D3F]">Video Call With</span> {name}</p>
-                                <p className="text-[16px] text-[#64748B]">{currentDate}</p>
-                            </div>
-                        </div>
-                    );
-                })
-            }
+            <div>
+                <p className="text-[18px] text-[#64748B]"><span className="font-semibold text-lg text-[#244D3F]">Video Call With</span> {name}</p>
+                <p className="text-[16px] text-[#64748B]">{currentDate}</p>
+            </div>
         </div>
     );
+
 };
 export default VideoCallInfos;
