@@ -23,6 +23,10 @@ const TimeLinePage = () => {
     return (
         <div className="container mx-auto min-h-[60vh] w-9/12 mt-20 mb-10">
             <h2 className="font-bold text-5xl mb-6">TimeLine</h2>
+
+            <div>
+                Filter timeline
+            </div>
             {
                 noData ?
                     (

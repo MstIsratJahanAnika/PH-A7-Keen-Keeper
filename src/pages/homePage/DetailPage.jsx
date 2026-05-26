@@ -49,6 +49,15 @@ const DetailPage = () => {
 
     // function calling friend
     const handleCallingFriend = () => {
+
+        const alreadyDone = callingInfos.find(friend=> friend.id == expectedFriend.id);
+        
+        if(alreadyDone){
+            toast.error(`Call with ${expectedFriend.name} Already Done`);
+            return;
+        }
+
+        //na hole execute koro
         setCallingInfos([...callingInfos, expectedFriend]);
 
         // toaster
@@ -56,6 +65,15 @@ const DetailPage = () => {
     };
     // function texting friend
     const handleTextingFriend = () => {
+
+        const alreadyDone = textingInfos.find(friend=> friend.id == expectedFriend.id);
+        
+        if(alreadyDone){
+            toast.error(`Text with ${expectedFriend.name} Already Done`);
+            return;
+        }
+
+        //na hole execute koro
         setTextingInfos([...textingInfos, expectedFriend]);
 
         // toaster
@@ -63,6 +81,15 @@ const DetailPage = () => {
     };
     // function video calling friend
     const handleVideoCallFriend = () => {
+
+        const alreadyDone = videoCallInfos.find(friend=> friend.id == expectedFriend.id);
+        
+        if(alreadyDone){
+            toast.error(`VideoChat with ${expectedFriend.name} Already done`);
+            return;
+        }
+
+        //na hole execute koro
         setVideoCallInfos([...videoCallInfos, expectedFriend]);
 
         // toaster

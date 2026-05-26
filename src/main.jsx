@@ -10,6 +10,8 @@ import CommunicationTypeContextProvider from './context/CommunicationTypeContext
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+
+    {/* use of context API */}
     <CommunicationTypeContextProvider>
       <RouterProvider router={router} />
     </CommunicationTypeContextProvider>
